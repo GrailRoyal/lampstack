@@ -22,7 +22,7 @@ Setting up a LAMP stack (Linux, Apache, MySQL, PHP) on an Amazon EC2 instance us
    - Port 22 (SSH)
    - Port 80 (HTTP)
    - Port 443 (HTTPS)
-![EC2 Instance](https://github.com/GrailRoyal/StegOps/blob/ed6b0c291df66c2c80e7b20a9e6fb8688fa590dd/ec2.png)
+![EC2 Instance](https://github.com/GrailRoyal/lampstack/blob/images/1000756407.png)
 
 
 ## Connecting to the EC2 Instance
@@ -50,7 +50,7 @@ sudo systemctl status apache2
 ```bash
 http://mypublicip
 ```
-![Apache2 Testing](https://github.com/GrailRoyal/StegOps/blob/ed6b0c291df66c2c80e7b20a9e6fb8688fa590dd/Apache2%20Testing.png)
+![Apache2 Testing](https://github.com/GrailRoyal/lampstack/blob/images/1000756329.png)
 
 ## installing muSQL and security
 ```bash
@@ -58,14 +58,11 @@ sudo apt install mysql-server
 sudo mysql_secure_installation
 ```
 this commands installs the mySQL server and configure the security throuugh the passord strnght setting and acess control
-![MySQL Installed](https://github.com/GrailRoyal/StegOps/blob/ed6b0c291df66c2c80e7b20a9e6fb8688fa590dd/mySQL%20installed.png)
-
 
 ## installing Php
 ```bash
 sudo apt install php libapache2-mod-php php-mysql
 ```
-![PHP Installation](https://github.com/GrailRoyal/StegOps/blob/ed6b0c291df66c2c80e7b20a9e6fb8688fa590dd/php%20installation.png)
 
 
 ## Setting up a Virtual Host
@@ -117,7 +114,7 @@ sudo echo 'Hello LAMP from hostname' $(TOKEN=`curl -X PUT "http://169.254.169.25
 ```
 visit project website on browser with webname or ip address
 http://mypublicip
-![PHP Tested](https://github.com/GrailRoyal/StegOps/blob/ed6b0c291df66c2c80e7b20a9e6fb8688fa590dd/php%20tested.png)
+![PHP Tested](https://github.com/GrailRoyal/lampstack/blob/images/1000756325.png)
 
 
 
@@ -144,4 +141,4 @@ echo "<?php phpinfo(); ?>" > /var/www/projectlamp/info.php
 this command is suppose to display the content in the string but its passed to the php file in the projectlamp directory.
 test the file by visting it through the browser by going to the page
 http://mypublicip/info.php
-![PHP Info Page](https://github.com/GrailRoyal/StegOps/blob/ed6b0c291df66c2c80e7b20a9e6fb8688fa590dd/php%20info%20page.png)
+![PHP Info Page](https://github.com/GrailRoyal/lampstack/blob/images/1000756330.png)
