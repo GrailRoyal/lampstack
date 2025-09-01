@@ -1,4 +1,3 @@
-
 # # Setting Up a LAMP Stack on an EC2 Instance (Ubuntu Server)
 
 Setting up a LAMP stack (Linux, Apache, MySQL, PHP) on an Amazon EC2 instance using Ubuntu Server 22.04 LTS. This setup is ideal for developing and hosting dynamic web applications.
@@ -32,49 +31,56 @@ Once your instance is running, connect via SSH with the following command:
 ```bash
 ssh -i key.pem ubuntu@<mypublicip>
 ```
- 
+ This command connects your local machine to get access to your cloud machine which is the instance that has been set up . This allows for the Instance to be managed or worked on with your local machine via the terminal 
 ## installing the LAMP stack
 **Update the package repository**
 ```bash
 sudo apt update
 ```
+This command tells your machine to update itself by update its software repositiry for your machine to keep it upto date so it can be able to get the latest software or program when you try to download or upgrade a software por program
 **Install Apache**
 ```bash
 sudo apt install apache2
 ```
+The apache prgram is downloaded to your machine with this command , it tells your machine to download apache
+
 **Check Apache2 status**
 ```bash
 sudo systemctl status apache2
 ```
+ This command is used to check the status of the apache that was just downloaded to as to know if its downloaded and running properly 
 ## Test Apache2 on server
 ```bash
 http://mypublicip
 ```
 ![Apache2 Testing](https://github.com/GrailRoyal/lampstack/blob/images/1000756329.png)
 
-## installing muSQL and security
+## installing mySQL and security
 ```bash
 sudo apt install mysql-server
 sudo mysql_secure_installation
 ```
-this commands installs the mySQL server and configure the security throuugh the passord strnght setting and acess control
+This commands installs the mySQL server and configure the security through the password strenght setting and access control
+and configure a more secure access to the mySQL serve orther thatn the default which makes the server more secure
 
 ## installing Php
 ```bash
 sudo apt install php libapache2-mod-php php-mysql
 ```
-
+This will install the php library that llpws php to work with apache as well as the one that allows php to work with mySQL this is very important becaus ewothput this php will stand insolation on the machine without working with other server it needs to work with for this project.
 
 ## Setting up a Virtual Host
 **create directory for project**
+This set up is what what cfrrate the directory from which our server will be serving out content upon request. This is very imporant to set up , so as not to let the default diectory server content which may not be the directory in which our content is situated
 ```bash
 sudo mkdir /var/www/projectlamp
 ```
-change the ownership  of the project directory as well as the files in the directory this is made possible with the recursive included in the command by -R
+Create a new directory in the directory that hold the difault 
 
 ```bash
 sudo chown -R $USER:$USER /var/www/projectlamp
 ```
+change the ownership  of the project directory as well as the files in the directory this is made possible with the recursive included in the command by -R
 **Configure a virual host**
 ```bash
 sudo nano /etc/apache2/sites-available/projectlamp.conf
@@ -142,3 +148,4 @@ this command is suppose to display the content in the string but its passed to t
 test the file by visting it through the browser by going to the page
 http://mypublicip/info.php
 ![PHP Info Page](https://github.com/GrailRoyal/lampstack/blob/images/1000756330.png)
+   rewriet this for me dont change anything other than correct spellings and puntuoations and
