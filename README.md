@@ -31,6 +31,7 @@ Once your instance is running, connect via SSH with the following command:
 ```bash
 ssh -i key.pem ubuntu@<mypublicip>
 ```
+![EC2 Instance](https://github.com/GrailRoyal/lampstack/blob/images/1000784091.png)
  This command connects your local machine to get access to your cloud machine which is the instance that has been set up . This allows for the Instance to be managed or worked on with your local machine via the terminal 
 ## installing the LAMP stack
 **Update the package repository**
@@ -48,6 +49,7 @@ The apache prgram is downloaded to your machine with this command , it tells you
 ```bash
 sudo systemctl status apache2
 ```
+![Apache2 Status](https://github.com/GrailRoyal/lampstack/blob/images/1000784093.png)
  This command is used to check the status of the apache that was just downloaded to as to know if its downloaded and running properly 
 ## Test Apache2 on server
 ```bash
@@ -60,6 +62,8 @@ http://mypublicip
 sudo apt install mysql-server
 sudo mysql_secure_installation
 ```
+![mySQL server](https://github.com/GrailRoyal/lampstack/blob/images/1000784089.png)
+
 This commands installs the mySQL server and configure the security through the password strenght setting and access control
 and configure a more secure access to the mySQL serve orther thatn the default which makes the server more secure
 
@@ -85,6 +89,7 @@ change the ownership  of the project directory as well as the files in the direc
 ```bash
 sudo nano /etc/apache2/sites-available/projectlamp.conf
 ```
+![Virtual host setup](https://github.com/GrailRoyal/lampstack/blob/images/1000784094.png)
 ```bash
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
@@ -148,4 +153,3 @@ this command is suppose to display the content in the string but its passed to t
 test the file by visting it through the browser by going to the page
 http://mypublicip/info.php
 ![PHP Info Page](https://github.com/GrailRoyal/lampstack/blob/images/1000756330.png)
-   rewriet this for me dont change anything other than correct spellings and puntuoations and
